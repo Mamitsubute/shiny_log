@@ -6,8 +6,31 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+      });
+    </script>
   </head>
-
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">ShinyLog</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html">記録をつける</a></li>
+          <li><a href="badges.html">みんなのイロチ</a></li>
+          <li><a href="collapsible.html">メモ帳</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="sass.html">記録をつける</a></li>
+      <li><a href="badges.html">みんなのイロチ</a></li>
+      <li><a href="collapsible.html">メモ帳</a></li>
+    </ul>
+</header>
   <body>
     <%= yield %>
   </body>
