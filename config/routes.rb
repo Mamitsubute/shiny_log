@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'users#index'
   
-  resources :pokemons do
-    resource :shinies, only: [:create, :destroy]
-  end
+  resources :pokemons
   
+  resource :shinies, only: [:create, :destroy]
+
   resources :users
 end
